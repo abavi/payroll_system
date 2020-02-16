@@ -65,7 +65,7 @@ public class PayrollSystem {
     
     //Sub-menu for registering an employee to the system
     public static void printRegisterMenu(){
-        System.out.println("***********************"
+        System.out.println( "***********************"
                 +           "\n*  Register Employee  *" 
                 +           "\n***********************"                
                 +           "\na. Salaried Employees"
@@ -76,8 +76,8 @@ public class PayrollSystem {
     
     //Sub-menu for viewing an employee
     public static void printViewMenu(){
-        System.out.println("********************"
-                +           "\n*  Payroll System  *" 
+        System.out.println( "********************"
+                +           "\n*  View Employees  *" 
                 +           "\n********************"                
                 +           "\na. All Employees"
                 +           "\nb. Salaried Employees"
@@ -88,9 +88,9 @@ public class PayrollSystem {
     
     //Sub-menu for generating pay-slips
     public static void printPayslipMenu(){
-        System.out.println("********************"
-                +           "\n*  Payroll System  *" 
-                +           "\n********************"                
+        System.out.println( "************************"
+                +           "\n*  Generate pay slips  *" 
+                +           "\n************************"                
                 +           "\na. Salaried Employees"
                 +           "\nb. Hourly Employees"
                 +           "\nc. Commission Employees"
