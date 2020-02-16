@@ -17,8 +17,7 @@ public class PayrollSystem {
         //TODO Move Menu functionality in a class
         //TODO Add choice validation <----- DONE? Switch has some sort of validation
         //TODO Make the choice ignore case <-------- DONE
-        //TODO Add sub-menus for 1 2 4 <--------- DONE
-        //TODO Employee Class and SubClasses
+        //TODO Add sub-menus for 1 2 4 <--------- DONE        
         do {
             printMainMenu();
             System.out.print("Please enter your option: ");
