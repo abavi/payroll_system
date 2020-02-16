@@ -15,7 +15,10 @@ public class PayrollSystem {
         String choice;
         Scanner scanner = new Scanner(System.in);
         //TODO Move Menu functionality in a class
-        //TODO Add choice validation
+        //TODO Add choice validation <----- DONE? Switch has some sort of validation
+        //TODO Make the choice ignore case <-------- DONE
+        //TODO Add sub-menus for 1 2 4 <--------- DONE
+        //TODO Employee Class and SubClasses
         do {
             printMainMenu();
             System.out.print("Please enter your option: ");
@@ -27,21 +30,21 @@ public class PayrollSystem {
                         printRegisterMenu();
                         System.out.print("Please enter your option: ");
                         choice = scanner.nextLine();
-                    }while(!choice.equals("d")); //Going back to the main-menu
+                    }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
                 case "2":
                     do{
                         printViewMenu();
                         System.out.print("Please enter your option: ");
                         choice = scanner.nextLine();
-                    }while(!choice.equals("e")); //Going back to the main-menu
+                    }while(!choice.equalsIgnoreCase("e")); //Going back to the main-menu
                     break;
                 case "4":
                     do{
                         printPayslipMenu();
                         System.out.print("Please enter your option: ");
                         choice = scanner.nextLine();
-                    }while(!choice.equals("d")); //Going back to the main-menu
+                    }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
                 default:                    
                     break;
@@ -59,9 +62,7 @@ public class PayrollSystem {
                 +           "\n3. Remove employee"
                 +           "\n4. Generate Pay slip"
                 +           "\n5. Exit");
-    }
-    
-    //TODO Add sub-menus for 1 2 4
+    } 
     
     //Sub-menu for registering an employee to the system
     public static void printRegisterMenu(){
@@ -97,5 +98,3 @@ public class PayrollSystem {
                 +           "\nd. Back");
     }
 }
-    
-
