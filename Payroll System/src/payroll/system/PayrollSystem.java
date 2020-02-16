@@ -11,8 +11,11 @@ public class PayrollSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        String choice;
+        Scanner scanner = new Scanner(System.in);
         printMainMenu();
+        System.out.print("Please enter your option: ");
+        choice = scanner.nextLine();
     }
     
     // Method to print the initial main menu
