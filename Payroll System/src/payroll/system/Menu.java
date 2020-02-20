@@ -1,11 +1,10 @@
 package payroll.system;
-
 /**
  *
  * @author Bavi
  */
 public class Menu {
-    // Menu class used for de-cluttering the main class
+    // Menu class used for de-cluttering the main class 
     
      // Method to print the initial main menu
      public static void printMainMenu(){
