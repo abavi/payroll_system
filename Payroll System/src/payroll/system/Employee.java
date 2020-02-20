@@ -8,9 +8,9 @@ package payroll.system;
        private String title;
        private String firstName;
        private String lastName;
-       private String dob; // Date of birth
-       private int niNo; // National insurance number
-       private int id; // Employee ID
+       private String dateOfBirth; // Date of birth
+       private int nationalInsuranceNumber; // National insurance number
+       private int employeeId; // Employee ID
        private String jobTitle;
        private String jobDepartment;
        
@@ -22,9 +22,9 @@ package payroll.system;
         this.title = title;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dob = dob;
-        this.niNo = niNo;
-        this.id = id;
+        this.dateOfBirth = dob;
+        this.nationalInsuranceNumber = niNo;
+        this.employeeId = id;
         this.jobTitle = jobTitle;
         this.jobDepartment = jobDepartment;
     }
@@ -57,28 +57,28 @@ package payroll.system;
         this.lastName = lastName;
     }
 
-    public String getDob() {
-        return dob;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public int getNiNo() {
-        return niNo;
+    public int getNationalInsuranceNumber() {
+        return nationalInsuranceNumber;
     }
 
-    public void setNiNo(int niNo) {
-        this.niNo = niNo;
+    public void setNationalInsuranceNumber(int nationalInsuranceNumber) {
+        this.nationalInsuranceNumber = nationalInsuranceNumber;
     }
 
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getJobTitle() {
