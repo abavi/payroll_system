@@ -13,11 +13,7 @@ public class PayrollSystem {
     public static void main(String[] args) {
         //Printing the main menu on screen and allowing user input
         String choice;
-        Scanner scanner = new Scanner(System.in);
-        //TODO Move Menu functionality in a class
-        //TODO Add choice validation <----- DONE? Switch has some sort of validation
-        //TODO Make the choice ignore case <-------- DONE
-        //TODO Add sub-menus for 1 2 4 <--------- DONE        
+        Scanner scanner = new Scanner(System.in);       
         do {
             printMainMenu();
             System.out.print("Please enter your option: ");

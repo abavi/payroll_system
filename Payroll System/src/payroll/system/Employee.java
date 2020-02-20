@@ -4,13 +4,7 @@ package payroll.system;
  *
  * @author Bavi
  */
-    //TODO Instances <---- DONE
-    //TODO Getters and Setters <---- DONE
-    //TODO Child Classes <---- DONE
-    //TODO Methods
-    //TODO Enum for job titles
-    //TODO Constructors <---- DONE
-public class Employee {
+   public class Employee {
        private String title;
        private String firstName;
        private String lastName;
