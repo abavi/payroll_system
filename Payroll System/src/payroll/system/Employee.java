@@ -33,7 +33,9 @@ public class Employee {
         this.id = id;
         this.jobTitle = jobTitle;
         this.jobDepartment = jobDepartment;
-    } 
+    }
+    
+    //Methods
     
       
     //Getters and Setters
