@@ -23,7 +23,7 @@ public class PayrollSystem {
        String lastName;
        String dateOfBirth; // Date of birth
        int nationalInsuranceNumber; // National insurance number
-       int employeeId; // Employee ID
+       int employeeId = 1; // Employee ID avoids duplicates
        String jobTitle;
        String jobDepartment;
        
@@ -40,13 +40,17 @@ public class PayrollSystem {
         ArrayList<HourlyEmployee> hourlyEmployees = new ArrayList<HourlyEmployee>();        
         ArrayList<CommissionEmployee> commissionEmployees = new ArrayList<CommissionEmployee>();
         
-        //Populating with 3 Employees
-        SalariedEmployee employee1 = new SalariedEmployee("Full Time", 16000, "Mr", "Steve", "Jobs", "26-02-1955", "SX1234D", 1, "Manager", "HR");
-        salariedEmployees.add(employee1);
-        SalariedEmployee.printList(salariedEmployees);      
+        //Populating with 3 Employees of each type
+        
+        //Salaried Employees     
+        salariedEmployees.add(new SalariedEmployee("Full Time", 16000, "Mr", "Steve", "Jobs", "26-02-1955", "SX1234D", employeeId++, "Manager", "HR"));        
+        //Hourly Employees
+        hourlyEmployees.add(new HourlyEmployee(8.7, "Mr", "Freddy", "Kruger", "01-03-1940", "SJ3321Q", employeeId++, "Dream Manager", "Ghosting"));
+        //Commision Employees
+        commissionEmployees.add(new CommissionEmployee(15000, 5.5, "Ms", "Bella", "Hadid", "20-05-1994", "SB3245K", employeeId++, "Model", "Modelling"));
         
         //Printing the main menu on screen and allowing user input       
-        /***do {
+        do {
             Menu.printMainMenu();            
             choice = scanner.nextLine();
             //Allowing sub-menus to be printed
@@ -61,6 +65,18 @@ public class PayrollSystem {
                     do{
                         Menu.printViewMenu();                        
                         choice = scanner.nextLine();
+                        if(choice.equalsIgnoreCase("b")){
+                            System.out.println("Printing salaried employees...");
+                            SalariedEmployee.printList(salariedEmployees);
+                        }
+                        else if(choice.equalsIgnoreCase("c")) {
+                            System.out.println("Printing hourly employees...");
+                            HourlyEmployee.printList(hourlyEmployees);
+                        }
+                        else if(choice.equalsIgnoreCase("d")){
+                            System.out.println("Printing commission employees...");
+                            CommissionEmployee.printList(commissionEmployees);
+                        }
                     }while(!choice.equalsIgnoreCase("e")); //Going back to the main-menu
                     break;
                 case "3":
@@ -72,10 +88,14 @@ public class PayrollSystem {
                         choice = scanner.nextLine();
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
-                default:                    
+                case "5":
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("<-------------- Invalid Choice! ----------------->");
                     break;
             }
-        } while (!choice.equals("5"));***/       
+        } while (!choice.equals("5"));       
             
         }
 

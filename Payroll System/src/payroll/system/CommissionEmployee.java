@@ -1,5 +1,7 @@
 package payroll.system;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Bavi
@@ -15,7 +17,17 @@ public class CommissionEmployee extends Employee {
         super(title, firstName, lastName, dob, niNo, id, jobTitle, jobDepartment);
         this.annualGrossSalary = annualGrossSalary;
         this.commissionRate = commissionRate;
-    }   
+    }
+    
+    public static void printList(ArrayList<CommissionEmployee> commissionEmployees){
+        for(CommissionEmployee employee : commissionEmployees){
+            System.out.println(employee.annualGrossSalary + " " + employee.commissionRate + " " + employee.getTitle() + " " +
+                    employee.getFirstName() + " " + employee.getLastName() + " " + employee.getDateOfBirth() + " " +
+                    employee.getNationalInsuranceNumber() + " " + employee.getEmployeeId() + " " +
+                    employee.getJobTitle() + " " + employee.getJobDepartment());
+        }
+    }
+    
     //Getters and Setters
     public int getAnnualGrossSalary() {
         return annualGrossSalary;
