@@ -40,8 +40,7 @@ public class PayrollSystem {
         ArrayList<HourlyEmployee> hourlyEmployees = new ArrayList<HourlyEmployee>();        
         ArrayList<CommissionEmployee> commissionEmployees = new ArrayList<CommissionEmployee>();
         
-        //Populating with 3 Employees of each type
-        
+        //Populating with 3 Employees of each type        
         //Salaried Employees     
         salariedEmployees.add(new SalariedEmployee("Full Time", 16000, "Mr", "Steve", "Jobs", "26-02-1955", "SX1234D", employeeId++, "Manager", "HR"));        
         //Hourly Employees
@@ -65,7 +64,13 @@ public class PayrollSystem {
                     do{
                         Menu.printViewMenu();                        
                         choice = scanner.nextLine();
-                        if(choice.equalsIgnoreCase("b")){
+                        if(choice.equalsIgnoreCase("a")){
+                            System.out.println("Printing all employees...");
+                            SalariedEmployee.printList(salariedEmployees);
+                            HourlyEmployee.printList(hourlyEmployees);
+                            CommissionEmployee.printList(commissionEmployees);                            
+                        }
+                        else if(choice.equalsIgnoreCase("b")){
                             System.out.println("Printing salaried employees...");
                             SalariedEmployee.printList(salariedEmployees);
                         }
