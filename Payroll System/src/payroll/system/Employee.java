@@ -9,7 +9,7 @@ package payroll.system;
        private String firstName;
        private String lastName;
        private String dateOfBirth; // Date of birth
-       private int nationalInsuranceNumber; // National insurance number
+       private String nationalInsuranceNumber; // National insurance number
        private int employeeId; // Employee ID
        private String jobTitle;
        private String jobDepartment;
@@ -18,7 +18,7 @@ package payroll.system;
        
     //Full Constructor
     public Employee(String title, String firstName, String lastName, String dob,
-            int niNo, int id, String jobTitle, String jobDepartment) {
+            String niNo, int id, String jobTitle, String jobDepartment) {
         this.title = title;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,7 +27,7 @@ package payroll.system;
         this.employeeId = id;
         this.jobTitle = jobTitle;
         this.jobDepartment = jobDepartment;
-    }
+    }  
     
     //Methods
     
@@ -65,11 +65,11 @@ package payroll.system;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getNationalInsuranceNumber() {
+    public String getNationalInsuranceNumber() {
         return nationalInsuranceNumber;
     }
 
-    public void setNationalInsuranceNumber(int nationalInsuranceNumber) {
+    public void setNationalInsuranceNumber(String nationalInsuranceNumber) {
         this.nationalInsuranceNumber = nationalInsuranceNumber;
     }
 

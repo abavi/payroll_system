@@ -11,7 +11,7 @@ public class CommissionEmployee extends Employee {
     //Constructors
     public CommissionEmployee(int annualGrossSalary, double commissionRate,
             String title, String firstName, String lastName, String dob,
-            int niNo, int id, String jobTitle, String jobDepartment) {
+            String niNo, int id, String jobTitle, String jobDepartment) {
         super(title, firstName, lastName, dob, niNo, id, jobTitle, jobDepartment);
         this.annualGrossSalary = annualGrossSalary;
         this.commissionRate = commissionRate;

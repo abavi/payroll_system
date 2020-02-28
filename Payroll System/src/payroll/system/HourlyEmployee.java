@@ -9,7 +9,7 @@ public class HourlyEmployee extends Employee {
     
     //Constructors
     public HourlyEmployee(double hourlyRate, String title, String firstName,
-            String lastName, String dob, int niNo, int id, String jobTitle,
+            String lastName, String dob, String niNo, int id, String jobTitle,
             String jobDepartment) {
         super(title, firstName, lastName, dob, niNo, id, jobTitle, jobDepartment);
         this.hourlyRate = hourlyRate;
