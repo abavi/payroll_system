@@ -57,7 +57,16 @@ public class PayrollSystem {
                 case "1":
                     do{
                         Menu.printRegisterMenu();                        
-                        choice = scanner.nextLine();                       
+                        choice = scanner.nextLine();
+                        if(choice.equalsIgnoreCase("a")){
+                            System.out.println("Enter Salaried Employees Details...");
+                        }
+                        else if(choice.equalsIgnoreCase("b")){
+                            System.out.println("Enter Hourly Employees Details...");
+                        }
+                        else if(choice.equalsIgnoreCase("c")){
+                            System.out.println("Enter Commission Employees Details...");
+                        }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
                 case "2":
