@@ -74,6 +74,23 @@ public class CommissionEmployee extends Employee {
        System.out.println("Added employee to Commission group...");
     }
     
+    //Methods for searching employees
+    public static boolean isEmployed(String firstName, String lastName, ArrayList<CommissionEmployee> commissionEmployees){
+         for(CommissionEmployee employee : commissionEmployees){
+             if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                 return true;
+         }         
+         return false;
+     }
+    
+     public static int getIndex(String firstName, String lastName, ArrayList<CommissionEmployee> commissionEmployee) throws IndexOutOfBoundsException{
+        for(CommissionEmployee employee : commissionEmployee){
+            if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                return commissionEmployee.indexOf(employee);
+        }         
+        return -1;
+    }
+
     //Getters and Setters
     public int getAnnualGrossSalary() {
         return annualGrossSalary;

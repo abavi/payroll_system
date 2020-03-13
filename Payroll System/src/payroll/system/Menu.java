@@ -40,7 +40,8 @@ public class Menu {
                 +           "\nb. Salaried Employees"
                 +           "\nc. Hourly Employees"
                 +           "\nd. Commission Employees"
-                +           "\ne. Back");
+                +           "\ne. Search Employees"
+                +           "\nf. Back");
         System.out.print("Please enter your option: ");
     }
     

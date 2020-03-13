@@ -94,10 +94,50 @@ public class PayrollSystem {
                             System.out.println("Printing commission employees...");
                             CommissionEmployee.printList(commissionEmployees);
                         }
-                    }while(!choice.equalsIgnoreCase("e")); //Going back to the main-menu
+                        else if(choice.equalsIgnoreCase("e")){
+                            System.out.println("Searching employees...");
+                            System.out.print("Enter first name: ");
+                            firstName = scanner.nextLine();
+                            System.out.print("Enter last name: ");
+                            lastName = scanner.nextLine();
+                            // Searching in each group of employees. One employee can't be in 2 groups
+                            if(SalariedEmployee.isEmployed(firstName, lastName, salariedEmployees)){
+                                System.out.println("Found in Salaried Employees");
+                            }
+                            else if(HourlyEmployee.isEmployed(firstName, lastName, hourlyEmployees)){
+                                System.out.println("Found in Hourly Employees");
+                            }
+                            else if(CommissionEmployee.isEmployed(firstName, lastName, commissionEmployees)){
+                                System.out.println("Found in Commission Employees");
+                            }
+                            else {
+                                System.out.println("Employee not found!");
+                            }
+                        }
+                    }while(!choice.equalsIgnoreCase("f")); //Going back to the main-menu
                     break;
-                case "3":
-                    System.out.println("REMOVED");
+                case "3":                    
+                    System.out.println("Removing employee...");
+                    System.out.print("Enter first name: ");
+                    firstName = scanner.nextLine();
+                    System.out.print("Enter last name: ");
+                    lastName = scanner.nextLine();
+                    
+                     if(SalariedEmployee.isEmployed(firstName, lastName, salariedEmployees)){
+                                salariedEmployees.remove(SalariedEmployee.getIndex(firstName, lastName, salariedEmployees));
+                                System.out.println("Removed from Salaried Employees!");
+                            }
+                            else if(HourlyEmployee.isEmployed(firstName, lastName, hourlyEmployees)){
+                                hourlyEmployees.remove(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees));
+                                System.out.println("Removed from Hourly Employees!");
+                            }
+                            else if(CommissionEmployee.isEmployed(firstName, lastName, commissionEmployees)){
+                                commissionEmployees.remove(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees));
+                                System.out.println("Removed from Commission Employees!");
+                            }
+                            else {
+                                System.out.println("Employee not found!");
+                            }
                     break;
                 case "4":
                     do{

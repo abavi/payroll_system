@@ -73,6 +73,23 @@ public class SalariedEmployee extends Employee {
        salariedEmployees.add(new SalariedEmployee(contractType, annualSalary, title, firstName, lastName, dateOfBirth, nationalInsuranceNumber, employeeId, jobTitle, jobDepartment));
        System.out.println("Added employee to Salaried group...");
     }
+     
+     //Methods for searching employees
+     public static boolean isEmployed(String firstName, String lastName, ArrayList<SalariedEmployee> salariedEmployees){
+         for(SalariedEmployee employee : salariedEmployees){
+             if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                 return true;
+         }         
+         return false;
+     }
+     
+     public static int getIndex(String firstName, String lastName, ArrayList<SalariedEmployee> salariedEmployees) throws IndexOutOfBoundsException{
+         for(SalariedEmployee employee : salariedEmployees){
+             if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                 return salariedEmployees.indexOf(employee);
+         }         
+         return -1;
+     }
     
     //Getters and setters
     public String getContractType() {

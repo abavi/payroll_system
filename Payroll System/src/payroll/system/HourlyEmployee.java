@@ -67,6 +67,24 @@ public class HourlyEmployee extends Employee {
        System.out.println("Added employee to Hourly group...");
     }
     
+    //Methods for searching employees
+    public static boolean isEmployed(String firstName, String lastName, ArrayList<HourlyEmployee> hourlyEmployees){
+        for(HourlyEmployee employee : hourlyEmployees){
+            if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                return true;
+        }         
+        return false;
+    }
+    
+     public static int getIndex(String firstName, String lastName, ArrayList<HourlyEmployee> hourlyEmployee) throws IndexOutOfBoundsException{
+        for(HourlyEmployee employee : hourlyEmployee){
+            if(employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName))
+                return hourlyEmployee.indexOf(employee);
+        }         
+        return -1;
+    }
+       
+    
     //Getters and setters
     public double getHourlyRate() {
         return hourlyRate;
