@@ -49,6 +49,10 @@ public class CommissionEmployee extends Employee {
        firstName = scanner.nextLine();
        System.out.print("Enter last name: ");
        lastName = scanner.nextLine(); //TODO Validation (check other type of employees)
+       if(isEmployed(firstName, lastName, commissionEmployees)){
+           System.out.println("Already employed!");
+           return; // Stop asking user for input and return to main menu
+       }
        System.out.print("Enter date of birth DD-MM-YYYY: ");
        dateOfBirth = scanner.nextLine();
        System.out.print("Enter National Insurance Number: ");
