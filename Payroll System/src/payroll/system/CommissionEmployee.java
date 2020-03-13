@@ -22,10 +22,10 @@ public class CommissionEmployee extends Employee {
     
     public static void printList(ArrayList<CommissionEmployee> commissionEmployees){
         for(CommissionEmployee employee : commissionEmployees){
-            System.out.println(employee.annualGrossSalary + " " + employee.commissionRate + " " + employee.getTitle() + " " +
-                    employee.getFirstName() + " " + employee.getLastName() + " " + employee.getDateOfBirth() + " " +
-                    employee.getNationalInsuranceNumber() + " " + employee.getEmployeeId() + " " +
-                    employee.getJobTitle() + " " + employee.getJobDepartment());
+            System.out.println(employee.getTitle() + " | " + employee.getFirstName() + " " + employee.getLastName() + " | " + employee.getDateOfBirth()
+                     + " | " + employee.getNationalInsuranceNumber() + " | " + employee.getEmployeeId() + " | " + employee.getJobTitle()
+                     + " | " + employee.getJobDepartment() + " | " + employee.annualGrossSalary
+                     + " | " + employee.commissionRate + " | ");
         }
     }
     

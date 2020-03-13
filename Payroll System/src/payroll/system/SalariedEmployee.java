@@ -22,10 +22,10 @@ public class SalariedEmployee extends Employee {
     
     public static void printList(ArrayList<SalariedEmployee> salariedEmployees){
         for(SalariedEmployee employee : salariedEmployees){
-            System.out.println(employee.contractType + " " + employee.annualSalary + " " + employee.getTitle() + " " +
-                    employee.getFirstName() + " " + employee.getLastName() + " " + employee.getDateOfBirth() + " " +
-                    employee.getNationalInsuranceNumber() + " " + employee.getEmployeeId() + " " +
-                    employee.getJobTitle() + " " + employee.getJobDepartment());
+            System.out.println(employee.getTitle() + " | " + employee.getFirstName() + " " + employee.getLastName() + " | " + employee.getDateOfBirth()
+                     + " | " + employee.getNationalInsuranceNumber() + " | " + employee.getEmployeeId() + " | " + employee.getJobTitle()
+                     + " | " + employee.getJobDepartment() + " | " + employee.contractType
+                     + " | " + employee.annualSalary + " | ");
         }
     }
     

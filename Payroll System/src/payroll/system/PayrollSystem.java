@@ -83,7 +83,7 @@ public class PayrollSystem {
                             CommissionEmployee.printList(commissionEmployees);                            
                         }
                         else if(choice.equalsIgnoreCase("b")){
-                            System.out.println("Printing salaried employees...");
+                            System.out.println("Printing salaried employees...");                            
                             SalariedEmployee.printList(salariedEmployees);
                         }
                         else if(choice.equalsIgnoreCase("c")) {

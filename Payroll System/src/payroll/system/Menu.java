@@ -54,5 +54,5 @@ public class Menu {
                 +           "\nc. Commission Employees"
                 +           "\nd. Back");
         System.out.print("Please enter your option: ");
-    }
+    } 
 }
