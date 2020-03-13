@@ -16,7 +16,10 @@ public class PayrollSystem {
        //TODO Move to Menu Class
        String choice;
        Scanner scanner = new Scanner(System.in);
-        
+       
+       //Variable for moth of payslip
+        String month;
+        int hoursWorked;
        //Local Variables to allow the user to create the Employee Forms
        String title;
        String firstName;
@@ -143,6 +146,39 @@ public class PayrollSystem {
                     do{
                         Menu.printPayslipMenu();                       
                         choice = scanner.nextLine();
+                        if(choice.equalsIgnoreCase("a")){
+                            System.out.print("Enter payslip period: ");
+                            month = scanner.nextLine();
+                            System.out.println("Enter the first and last name of the employee: ");
+                            System.out.print("Enter first name: ");
+                            firstName = scanner.nextLine();
+                            System.out.print("Enter last name: ");
+                            lastName = scanner.nextLine();
+                            SalariedEmployee.generatePayslip(salariedEmployees.get(SalariedEmployee.getIndex(firstName, lastName, salariedEmployees)), month);
+                        }
+                        else if(choice.equalsIgnoreCase("b")){
+                            System.out.print("Enter payslip period: ");
+                            month = scanner.nextLine();
+                            System.out.println("Enter the first and last name of the employee: ");
+                            System.out.print("Enter first name: ");
+                            firstName = scanner.nextLine();
+                            System.out.print("Enter last name: ");
+                            lastName = scanner.nextLine();
+                            System.out.println("Enter hours worked: ");
+                            hoursWorked = scanner.nextInt();
+                            scanner.nextLine();
+                            HourlyEmployee.generatePayslip(hourlyEmployees.get(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees)), month, hoursWorked);
+                        }
+                        else if(choice.equalsIgnoreCase("c")){
+                            System.out.print("Enter payslip period: ");
+                            month = scanner.nextLine();
+                            System.out.println("Enter the first and last name of the employee: ");
+                            System.out.print("Enter first name: ");
+                            firstName = scanner.nextLine();
+                            System.out.print("Enter last name: ");
+                            lastName = scanner.nextLine();                   
+                            CommissionEmployee.generatePayslip(commissionEmployees.get(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees)), month);
+                        }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
                 case "5":

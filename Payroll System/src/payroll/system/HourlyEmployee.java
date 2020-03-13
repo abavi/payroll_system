@@ -87,7 +87,19 @@ public class HourlyEmployee extends Employee {
         }         
         return -1;
     }
-       
+     
+     //Method for generating payslips
+       public static void generatePayslip(HourlyEmployee employee, String month, int hoursWorked){         
+         double monthlyPay = employee.hourlyRate * hoursWorked;
+         double taxes = ((20 * monthlyPay) / 100);
+         double netPay = monthlyPay - taxes;
+         System.out.println("Payslip Period: " + month);
+         System.out.println(" ");
+         System.out.println("Gross Pay(£): " + monthlyPay);
+         System.out.println("Taxes Paid(£): " + taxes);
+         System.out.println("Net Pay(£): " + netPay);         
+     }
+     
     
     //Getters and setters
     public double getHourlyRate() {

@@ -93,7 +93,19 @@ public class SalariedEmployee extends Employee {
                  return salariedEmployees.indexOf(employee);
          }         
          return -1;
-     }   
+     }
+     //Method for generating payslip
+     public static void generatePayslip(SalariedEmployee employee, String month){         
+         double monthlyPay = employee.annualSalary / 12;
+         double taxes = ((20 * monthlyPay) / 100);
+         double netPay = monthlyPay - taxes;
+         System.out.println("Payslip Period: " + month);
+         System.out.println(" ");
+         System.out.println("Gross Pay(£): " + monthlyPay);
+         System.out.println("Taxes Paid(£): " + taxes);
+         System.out.println("Net Pay(£): " + netPay);         
+     }
+     
     //Getters and setters
     public String getContractType() {
         return contractType;

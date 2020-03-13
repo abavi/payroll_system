@@ -94,6 +94,18 @@ public class CommissionEmployee extends Employee {
         }         
         return -1;
     }
+     
+     //Method for generating payslips
+      public static void generatePayslip(CommissionEmployee employee, String month){         
+         double monthlyPay = employee.annualGrossSalary / 12;
+         double taxes = ((20 * monthlyPay) / 100);
+         double netPay = monthlyPay - taxes + ((employee.commissionRate * monthlyPay) / 100);
+         System.out.println("Payslip Period: " + month);
+         System.out.println(" ");
+         System.out.println("Gross Pay(£): " + monthlyPay);
+         System.out.println("Taxes Paid(£): " + taxes);
+         System.out.println("Net Pay(£): " + netPay);         
+     }
 
     //Getters and Setters
     public int getAnnualGrossSalary() {
