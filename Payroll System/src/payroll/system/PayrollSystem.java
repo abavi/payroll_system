@@ -22,8 +22,8 @@ public class PayrollSystem {
        String firstName;
        String lastName;
        String dateOfBirth; // Date of birth
-       int nationalInsuranceNumber; // National insurance number
-       int employeeId = 1; // Employee ID avoids duplicates
+       String nationalInsuranceNumber; // National insurance number
+       int employeeId; // Employee ID avoids duplicates
        String jobTitle;
        String jobDepartment;
        
@@ -42,11 +42,11 @@ public class PayrollSystem {
         
         //Populating with 3 Employees of each type        
         //Salaried Employees     
-        salariedEmployees.add(new SalariedEmployee("Full Time", 16000, "Mr", "Steve", "Jobs", "26-02-1955", "SX1234D", employeeId++, "Manager", "HR"));        
+        salariedEmployees.add(new SalariedEmployee("Full Time", 16000, "Mr", "Steve", "Jobs", "26-02-1955", "SX1234D", 1, "Manager", "HR"));        
         //Hourly Employees
-        hourlyEmployees.add(new HourlyEmployee(8.7, "Mr", "Freddy", "Kruger", "01-03-1940", "SJ3321Q", employeeId++, "Dream Manager", "Ghosting"));
+        hourlyEmployees.add(new HourlyEmployee(8.7, "Mr", "Freddy", "Kruger", "01-03-1940", "SJ3321Q", 2, "Dream Manager", "Ghosting"));
         //Commision Employees
-        commissionEmployees.add(new CommissionEmployee(15000, 5.5, "Ms", "Bella", "Hadid", "20-05-1994", "SB3245K", employeeId++, "Model", "Modelling"));
+        commissionEmployees.add(new CommissionEmployee(15000, 5.5, "Ms", "Bella", "Hadid", "20-05-1994", "SB3245K", 3, "Model", "Modelling"));
         
         //Printing the main menu on screen and allowing user input       
         do {
@@ -60,12 +60,15 @@ public class PayrollSystem {
                         choice = scanner.nextLine();
                         if(choice.equalsIgnoreCase("a")){
                             System.out.println("Enter Salaried Employees Details...");
+                            SalariedEmployee.enterDetails(salariedEmployees);
                         }
                         else if(choice.equalsIgnoreCase("b")){
                             System.out.println("Enter Hourly Employees Details...");
+                            HourlyEmployee.enterDetails(hourlyEmployees);
                         }
                         else if(choice.equalsIgnoreCase("c")){
                             System.out.println("Enter Commission Employees Details...");
+                            CommissionEmployee.enterDetails(commissionEmployees);
                         }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
