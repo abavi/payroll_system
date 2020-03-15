@@ -1,11 +1,9 @@
 package payroll.system;
 /**
- *
+ * Menu class used for de-cluttering the main class 
  * @author Bavi
  */
-public class Menu {
-    // Menu class used for de-cluttering the main class 
-    
+public class Menu {    
      // Method to print the initial main menu
      public static void printMainMenu(){
         System.out.println("********************"
@@ -55,5 +53,16 @@ public class Menu {
                 +           "\nc. Commission Employees"
                 +           "\nd. Back");
         System.out.print("Please enter your option: ");
-    } 
+    }
+    
+    public static void printSubPayslipMenu(){
+        System.out.println( "************************"
+                +           "\n*  Generate pay slips  *" 
+                +           "\n************************"                
+                +           "\na. New payslip"
+                +           "\nb. See payslips"
+                +           "\nc. Back"
+        );
+        System.out.print("Please enter your option: ");
+    }
 }

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ * Sub-class of the Employee parent class to allow different fields.
  * @author Bavi
  */
 public class HourlyEmployee extends Employee {
     private double hourlyRate;
-    
+    private static ArrayList<Payslip> payslips = new ArrayList<Payslip>();
     //Constructors
     public HourlyEmployee(double hourlyRate, String title, String firstName,
             String lastName, String dob, String niNo, int id, String jobTitle,
@@ -97,8 +97,27 @@ public class HourlyEmployee extends Employee {
          System.out.println(" ");
          System.out.println("Gross Pay(£): " + monthlyPay);
          System.out.println("Taxes Paid(£): " + taxes);
-         System.out.println("Net Pay(£): " + netPay);         
-     }
+         System.out.println("Net Pay(£): " + netPay);
+         System.out.println("Saved...");
+         payslips.add(new Payslip(month, monthlyPay, taxes, netPay));
+     }       
+     //Method for finding the payslips based on the month the user is looking for
+       public static void findPayslip(ArrayList<Payslip> payslips, String month){
+        for(Payslip payslip : payslips){
+            if(payslip.getMonth().equalsIgnoreCase(month)){
+                 System.out.println("Payslip Period: " + payslip.getMonth());
+                 System.out.println(" ");
+                 System.out.println("Gross Pay(£): " + payslip.getMonthlyPay());
+                 System.out.println("Taxes Paid(£): " + payslip.getTaxes());
+                 System.out.println("Net Pay(£): " + payslip.getNetPay());
+                 System.out.println("Found...");
+            }
+            else {
+                System.out.println(payslip.getMonth());
+                System.out.println("Payslip not found...");
+            }
+        }
+    }
      
     
     //Getters and setters
@@ -108,6 +127,10 @@ public class HourlyEmployee extends Employee {
 
     public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
+    }
+
+    public static ArrayList<Payslip> getPayslips() {
+        return payslips;
     }
     
 }

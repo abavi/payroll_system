@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ * Sub-class of the Employee parent class to allow different fields.
  * @author Bavi
  */
 public class SalariedEmployee extends Employee {
+    
     private String contractType; // Full-time or part-time
     private int annualSalary;
-    
+    private static ArrayList<Payslip> payslips = new ArrayList<Payslip>();
     //Constructors
     public SalariedEmployee(String contractType, int annualSalary, String title,
             String firstName, String lastName, String dob, String niNo, int id,
@@ -94,7 +95,7 @@ public class SalariedEmployee extends Employee {
          }         
          return -1;
      }
-     //Method for generating payslip
+     //Method for generating payslip and storing payslips
      public static void generatePayslip(SalariedEmployee employee, String month){         
          double monthlyPay = employee.annualSalary / 12;
          double taxes = ((20 * monthlyPay) / 100);
@@ -103,8 +104,28 @@ public class SalariedEmployee extends Employee {
          System.out.println(" ");
          System.out.println("Gross Pay(£): " + monthlyPay);
          System.out.println("Taxes Paid(£): " + taxes);
-         System.out.println("Net Pay(£): " + netPay);         
+         System.out.println("Net Pay(£): " + netPay);
+         System.out.println("Saved...");
+         payslips.add(new Payslip(month, monthlyPay, taxes, netPay));
+         
      }
+     //Method for finding the payslips based on the month the user is looking for
+    public static void findPayslip(ArrayList<Payslip> payslips, String month){
+        for(Payslip payslip : payslips){
+            if(payslip.getMonth().equalsIgnoreCase(month)){
+                 System.out.println("Payslip Period: " + payslip.getMonth());
+                 System.out.println(" ");
+                 System.out.println("Gross Pay(£): " + payslip.getMonthlyPay());
+                 System.out.println("Taxes Paid(£): " + payslip.getTaxes());
+                 System.out.println("Net Pay(£): " + payslip.getNetPay());
+                 System.out.println("Found...");
+            }
+            else {
+                System.out.println(payslip.getMonth());
+                System.out.println("Payslip not found...");
+            }
+        }
+    }
      
     //Getters and setters
     public String getContractType() {
@@ -122,6 +143,10 @@ public class SalariedEmployee extends Employee {
     public void setAnnualSalary(int annualSalary) {
         this.annualSalary = annualSalary;
     }
-    
-    
+
+    public static ArrayList<Payslip> getPayslips() {
+        return payslips;
+    }
+
+   
 }

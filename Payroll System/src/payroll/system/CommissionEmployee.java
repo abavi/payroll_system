@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ * Sub-class of the Employee parent class to allow different fields.
  * @author Bavi
  */
 public class CommissionEmployee extends Employee {
     private int annualGrossSalary;
     private double commissionRate;
-    
+    private static ArrayList<Payslip> payslips = new ArrayList<Payslip>();
     //Constructors
     public CommissionEmployee(int annualGrossSalary, double commissionRate,
             String title, String firstName, String lastName, String dob,
@@ -104,8 +104,27 @@ public class CommissionEmployee extends Employee {
          System.out.println(" ");
          System.out.println("Gross Pay(£): " + monthlyPay);
          System.out.println("Taxes Paid(£): " + taxes);
-         System.out.println("Net Pay(£): " + netPay);         
+         System.out.println("Net Pay(£): " + netPay); 
+         System.out.println("Saved...");
+         payslips.add(new Payslip(month, monthlyPay, taxes, netPay));
      }
+      //Method for finding the payslips based on the month the user is looking for
+      public static void findPayslip(ArrayList<Payslip> payslips, String month){
+        for(Payslip payslip : payslips){
+            if(payslip.getMonth().equalsIgnoreCase(month)){
+                 System.out.println("Payslip Period: " + payslip.getMonth());
+                 System.out.println(" ");
+                 System.out.println("Gross Pay(£): " + payslip.getMonthlyPay());
+                 System.out.println("Taxes Paid(£): " + payslip.getTaxes());
+                 System.out.println("Net Pay(£): " + payslip.getNetPay());
+                 System.out.println("Found...");
+            }
+            else {
+                System.out.println(payslip.getMonth());
+                System.out.println("Payslip not found...");
+            }
+        }
+    }
 
     //Getters and Setters
     public int getAnnualGrossSalary() {
@@ -122,6 +141,10 @@ public class CommissionEmployee extends Employee {
 
     public void setCommissionRate(double commissionRate) {
         this.commissionRate = commissionRate;
+    }
+
+    public static ArrayList<Payslip> getPayslips() {
+        return payslips;
     }
     
     

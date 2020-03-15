@@ -1,10 +1,9 @@
 package payroll.system;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
- *
+ * The core class of the Payroll System. This is what the user runs.
  * @author Bavi
  */
 public class PayrollSystem {
@@ -147,37 +146,94 @@ public class PayrollSystem {
                         Menu.printPayslipMenu();                       
                         choice = scanner.nextLine();
                         if(choice.equalsIgnoreCase("a")){
-                            System.out.print("Enter payslip period: ");
-                            month = scanner.nextLine();
-                            System.out.println("Enter the first and last name of the employee: ");
-                            System.out.print("Enter first name: ");
-                            firstName = scanner.nextLine();
-                            System.out.print("Enter last name: ");
-                            lastName = scanner.nextLine();
-                            SalariedEmployee.generatePayslip(salariedEmployees.get(SalariedEmployee.getIndex(firstName, lastName, salariedEmployees)), month);
+                            do{
+                                Menu.printSubPayslipMenu();
+                                choice = scanner.nextLine();
+                                if(choice.equalsIgnoreCase("a")){
+                                    System.out.print("Enter payslip period: ");
+                                    month = scanner.nextLine();
+                                    System.out.println("Enter the first and last name of the employee: ");
+                                    System.out.print("Enter first name: ");
+                                    firstName = scanner.nextLine();
+                                    System.out.print("Enter last name: ");
+                                    lastName = scanner.nextLine();
+                                    SalariedEmployee employee = salariedEmployees.get(SalariedEmployee.getIndex(firstName, lastName, salariedEmployees));
+                                    SalariedEmployee.generatePayslip(employee, month);
+                                }
+                                else if(choice.equalsIgnoreCase("b")){
+                                     System.out.print("Enter payslip period: ");
+                                     month = scanner.nextLine();
+                                     System.out.println("Enter the first and last name of the employee: ");
+                                     System.out.print("Enter first name: ");
+                                     firstName = scanner.nextLine();
+                                     System.out.print("Enter last name: ");
+                                     lastName = scanner.nextLine();
+                                     SalariedEmployee employee = salariedEmployees.get(SalariedEmployee.getIndex(firstName, lastName, salariedEmployees));
+                                     SalariedEmployee.findPayslip(employee.getPayslips(), month);
+                                }
+                            }while(choice.equalsIgnoreCase("c"));                            
+                            
                         }
                         else if(choice.equalsIgnoreCase("b")){
-                            System.out.print("Enter payslip period: ");
-                            month = scanner.nextLine();
-                            System.out.println("Enter the first and last name of the employee: ");
-                            System.out.print("Enter first name: ");
-                            firstName = scanner.nextLine();
-                            System.out.print("Enter last name: ");
-                            lastName = scanner.nextLine();
-                            System.out.println("Enter hours worked: ");
-                            hoursWorked = scanner.nextInt();
-                            scanner.nextLine();
-                            HourlyEmployee.generatePayslip(hourlyEmployees.get(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees)), month, hoursWorked);
+                            do {
+                                Menu.printSubPayslipMenu();
+                                choice = scanner.nextLine();
+                                if(choice.equalsIgnoreCase("a")){
+                                    System.out.print("Enter payslip period: ");
+                                    month = scanner.nextLine();
+                                    System.out.println("Enter the first and last name of the employee: ");
+                                    System.out.print("Enter first name: ");
+                                    firstName = scanner.nextLine();
+                                    System.out.print("Enter last name: ");
+                                    lastName = scanner.nextLine();
+                                    System.out.println("Enter hours worked: ");
+                                    hoursWorked = scanner.nextInt();
+                                    scanner.nextLine();
+                                    HourlyEmployee employee = hourlyEmployees.get(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees));
+                                    HourlyEmployee.generatePayslip(employee, month, hoursWorked);
+                                }
+                                else if(choice.equalsIgnoreCase("b")){
+                                    System.out.print("Enter payslip period: ");
+                                    month = scanner.nextLine();
+                                    System.out.println("Enter the first and last name of the employee: ");
+                                    System.out.print("Enter first name: ");
+                                    firstName = scanner.nextLine();
+                                    System.out.print("Enter last name: ");
+                                    lastName = scanner.nextLine();                            
+                                    HourlyEmployee employee = hourlyEmployees.get(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees));
+                                    HourlyEmployee.findPayslip(employee.getPayslips(), month);
+                                }
+                            }while(choice.equalsIgnoreCase("c"));
+                            
                         }
                         else if(choice.equalsIgnoreCase("c")){
-                            System.out.print("Enter payslip period: ");
-                            month = scanner.nextLine();
-                            System.out.println("Enter the first and last name of the employee: ");
-                            System.out.print("Enter first name: ");
-                            firstName = scanner.nextLine();
-                            System.out.print("Enter last name: ");
-                            lastName = scanner.nextLine();                   
-                            CommissionEmployee.generatePayslip(commissionEmployees.get(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees)), month);
+                            do{
+                                Menu.printSubPayslipMenu();
+                                choice = scanner.nextLine();
+                                if(choice.equalsIgnoreCase("a")){
+                                    System.out.print("Enter payslip period: ");
+                                    month = scanner.nextLine();
+                                    System.out.println("Enter the first and last name of the employee: ");
+                                    System.out.print("Enter first name: ");
+                                    firstName = scanner.nextLine();
+                                    System.out.print("Enter last name: ");
+                                    lastName = scanner.nextLine();
+                                    CommissionEmployee employee = commissionEmployees.get(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees));
+                                    CommissionEmployee.generatePayslip(employee, month);
+                                }
+                                else if(choice.equalsIgnoreCase("b")){
+                                    System.out.print("Enter payslip period: ");
+                                    month = scanner.nextLine();
+                                    System.out.println("Enter the first and last name of the employee: ");
+                                    System.out.print("Enter first name: ");
+                                    firstName = scanner.nextLine();
+                                    System.out.print("Enter last name: ");
+                                    lastName = scanner.nextLine();
+                                    CommissionEmployee employee = commissionEmployees.get(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees));
+                                    CommissionEmployee.findPayslip(employee.getPayslips(), month);
+                                }
+                            }while(choice.equalsIgnoreCase("c"));
+                            
                         }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
