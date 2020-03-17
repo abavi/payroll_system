@@ -11,8 +11,7 @@ public class PayrollSystem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {        
-       //TODO Move to Menu Class
+    public static void main(String[] args) {       
        String choice;
        Scanner scanner = new Scanner(System.in);
        
@@ -56,7 +55,7 @@ public class PayrollSystem {
             choice = scanner.nextLine();
             //Allowing sub-menus to be printed
             switch (choice) {
-                case "1":
+                case "1": // Adding employees in the system
                     do{
                         Menu.printRegisterMenu();                        
                         choice = scanner.nextLine();
@@ -74,7 +73,7 @@ public class PayrollSystem {
                         }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
-                case "2":
+                case "2": // Printing the employees or searching for particular employee
                     do{
                         Menu.printViewMenu();                        
                         choice = scanner.nextLine();
@@ -118,7 +117,7 @@ public class PayrollSystem {
                         }
                     }while(!choice.equalsIgnoreCase("f")); //Going back to the main-menu
                     break;
-                case "3":                    
+                case "3": // Removing employee by looking in each group based on first and last name                    
                     System.out.println("Removing employee...");
                     System.out.print("Enter first name: ");
                     firstName = scanner.nextLine();
@@ -141,7 +140,7 @@ public class PayrollSystem {
                                 System.out.println("Employee not found!");
                             }
                     break;
-                case "4":
+                case "4": //Storing and viewing payslips for each employee
                     do{
                         Menu.printPayslipMenu();                       
                         choice = scanner.nextLine();
@@ -186,7 +185,7 @@ public class PayrollSystem {
                                     firstName = scanner.nextLine();
                                     System.out.print("Enter last name: ");
                                     lastName = scanner.nextLine();
-                                    System.out.println("Enter hours worked: ");
+                                    System.out.print("Enter hours worked: ");
                                     hoursWorked = scanner.nextInt();
                                     scanner.nextLine();
                                     HourlyEmployee employee = hourlyEmployees.get(HourlyEmployee.getIndex(firstName, lastName, hourlyEmployees));
@@ -232,15 +231,14 @@ public class PayrollSystem {
                                     CommissionEmployee employee = commissionEmployees.get(CommissionEmployee.getIndex(firstName, lastName, commissionEmployees));
                                     CommissionEmployee.findPayslip(employee.getPayslips(), month);
                                 }
-                            }while(choice.equalsIgnoreCase("c"));
-                            
+                            }while(choice.equalsIgnoreCase("c"));                            
                         }
                     }while(!choice.equalsIgnoreCase("d")); //Going back to the main-menu
                     break;
-                case "5":
+                case "5": // Closing the application
                     System.out.println("Exiting...");
                     break;
-                default:
+                default: // In case the user inputs none of the cases presented
                     System.out.println("<-------------- Invalid Choice! ----------------->");
                     break;
             }

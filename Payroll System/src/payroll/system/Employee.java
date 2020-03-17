@@ -1,10 +1,10 @@
 package payroll.system;
 
 /**
- * 
+ * Parent class with common fields that every employee has.
  * @author Bavi
  */
-   public class Employee {
+   abstract class Employee {
        private String title;
        private String firstName;
        private String lastName;
@@ -12,9 +12,7 @@ package payroll.system;
        private String nationalInsuranceNumber; // National insurance number
        private int employeeId; // Employee ID
        private String jobTitle;
-       private String jobDepartment;
-       
-    //Constructors
+       private String jobDepartment;  
        
     //Full Constructor
     public Employee(String title, String firstName, String lastName, String dob,
@@ -27,10 +25,7 @@ package payroll.system;
         this.employeeId = id;
         this.jobTitle = jobTitle;
         this.jobDepartment = jobDepartment;
-    }  
-    
-    //Methods
-    
+    }   
       
     //Getters and Setters
     public String getTitle() {

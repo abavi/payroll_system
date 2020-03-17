@@ -1,6 +1,6 @@
 package payroll.system;
 /**
- * Menu class used for de-cluttering the main class 
+ * Menu class used for de-cluttering the main class.
  * @author Bavi
  */
 public class Menu {    
@@ -55,6 +55,7 @@ public class Menu {
         System.out.print("Please enter your option: ");
     }
     
+    // Sub-menu for choosing to generate new payslip or find existing one
     public static void printSubPayslipMenu(){
         System.out.println( "************************"
                 +           "\n*  Generate pay slips  *" 
