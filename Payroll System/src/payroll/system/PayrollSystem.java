@@ -16,24 +16,11 @@ public class PayrollSystem {
        Scanner scanner = new Scanner(System.in);
        
        //Variable for moth of payslip
-        String month;
-        int hoursWorked;
-       //Local Variables to allow the user to create the Employee Forms
-       String title;
+       String month;
+       int hoursWorked;
+       //Local Variables to allow the user to create the Employee Forms      
        String firstName;
-       String lastName;
-       String dateOfBirth; // Date of birth
-       String nationalInsuranceNumber; // National insurance number
-       int employeeId; // Employee ID avoids duplicates
-       String jobTitle;
-       String jobDepartment;
-       
-       //Variables for the extended Employees
-       String contractType; // Full-time or part-time
-       int annualSalary;
-       double hourlyRate;
-       int annualGrossSalary;
-       double commissionRate;
+       String lastName;      
         
         //Creating the four Employee ArrayLists to allow viewing and removing
         //ArrayList<Employee> allEmployees = new ArrayList<>();
