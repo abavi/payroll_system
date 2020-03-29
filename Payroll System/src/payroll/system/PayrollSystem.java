@@ -17,7 +17,7 @@ public class PayrollSystem {
        
        //Variable for moth of payslip
        String month;
-       int hoursWorked;
+       int hoursWorked; // variable for worked hours
        //Local Variables to allow the user to create the Employee Forms      
        String firstName;
        String lastName;      
