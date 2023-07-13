@@ -14,10 +14,3 @@
 - User input
 - Creating console menus
 
-### TODO:
-- [ ] Validation Checks
-- [ ] Refactor code
-    - [ ] Clean up existing code
-    - [ ] Find ways to make it more efficient
-- [ ] Add a proper GUI
-- [ ] Read and Write to files
